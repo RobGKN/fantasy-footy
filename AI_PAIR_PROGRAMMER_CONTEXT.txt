@@ -1,0 +1,95 @@
+# PROJECT CONTEXT FOR AI PAIR PROGRAMMER
+
+## Overview
+This project is a machine learning initiative designed to identify "breakout" AFL Fantasy players based on their performance and pricing history. It is structured as a short but robust deep learning project suitable for showcasing on GitHub and practicing PyTorch workflows. The key aim is to train a model that predicts whether a player will provide exceptional value (fantasy points relative to price) in the upcoming AFL season.
+
+The project is being developed by a computer science graduate student with an interest in building experience with PyTorch, especially as it relates to practical ML workflows. Project aims to improve comfort and fluency with core PyTorch tools, data handling, training loops, and model evaluation.
+
+## Project Goals
+- Create a labeled dataset of AFL players from 2016 to 2024, with each record representing a player-season.
+- Engineer features based on historical performance, position, role, and pricing to train a predictive model.
+- Label each player-season as a "breakout" or not, based on a normalized value metric.
+- Train a PyTorch model (initially an MLP) to classify future breakouts.
+- Evaluate model performance using fantasy-relevant metrics and create a small set of visualizations or demo outputs.
+
+## Why This Project Exists
+- To build hands-on experience with PyTorch.
+- To explore sports analytics and fantasy modeling with a rich, real-world dataset.
+- To deliver a project that reflects realistic fantasy decision-making and player evaluation strategies.
+- To produce a finished, demo-able product that can be used in a GitHub portfolio.
+
+## Dataset Scope
+- Data ranges from 2016 to 2024.
+- Covers actual fantasy point averages and starting prices from DreamTeamTalk-scraped files: `afl_fantasy_YEAR.csv`.
+- Detailed per-player, per-season stats available from AFLTables in files named `*_yearly_averages.csv`.
+- Game logs are available in files like `*_game_logs_year0.csv` and can be optionally used for late-season form or sequence modeling.
+- Fantasy selection popularity is available in `afl_fantasy_selections_YEAR.csv` and `afl_fantasy_selections_all.csv`, though this is not the focus of the initial model.
+
+> Full dataset documentation is maintained in a separate file: `dataset_spec_gpt.txt`.
+
+## Definition of a "Breakout"
+A player is considered a breakout if they provide significantly more fantasy points than expected given their price at the start of a season.
+
+Breakout Label = 1 if:
+- The player has a valid average fantasy score for the season (e.g., played > 5 games).
+- The player's fantasy points per dollar (value score) exceeds a defined threshold.
+
+### Value Score:
+```
+value_score = normalized_fantasy_avg / normalized_start_price
+```
+Where normalization occurs per-season to account for inflation and fantasy pricing trends.
+
+The exact threshold for labeling a breakout is still to be finalized, but likely falls around the top X% of value scores per season or a fixed cutoff (e.g., 0.15).
+
+## Technical Decisions (So Far)
+
+### ✅ Analysis Unit:
+- Each data record is a **player-season**.
+- Model is trained to predict breakout for **season Y**, using information from **season Y-1 and earlier only**.
+
+### ✅ Label Scope:
+- Restricted to seasons 2016 to 2024 where real fantasy prices and point averages are available.
+- This avoids complications from trying to reconstruct fantasy scores pre-2016.
+
+### ✅ Initial Model Architecture:
+- Start with a **feedforward neural network (MLP)**.
+- Inputs: numerical/categorical features extracted per player-season.
+- Outputs: binary classification (breakout = 1 or not).
+- Will be implemented in PyTorch using custom Dataset and DataLoader objects.
+
+### ✅ Planned Evaluation Metrics:
+- Accuracy
+- F1 Score
+- Precision at Top K (to simulate identifying best-value picks)
+- ROC-AUC (if class imbalance is significant)
+
+### ✅ Feature Types (from year Y-1):
+- Player metadata: age, team, position, debut year, career stage.
+- Fantasy pricing: previous year average, adjusted average, games played, price at start of year (from `afl_fantasy_YEAR.csv`).
+- Yearly performance: stats like disposals, tackles, marks, goals, inside 50s, clangers, etc. (from `*_yearly_averages.csv`).
+- Normalized price and fantasy avg to correct for seasonal inflation.
+- Optional derived stats: late-season form (from `*_game_logs_year0.csv`), stat deltas year-over-year.
+
+### ✅ PyTorch Learning Goals:
+- Understand `Dataset` and `DataLoader` for custom tabular data.
+- Build training loop manually (no Lightning or high-level wrappers).
+- Track loss, implement early stopping or learning rate schedules.
+- Log metrics and optionally visualize feature importance or output distributions.
+
+## Open Questions
+- What threshold or ranking method should finalize breakout classification?
+- Whether to include advanced sequence models (RNN/LSTM) using game logs (likely as a stretch goal).
+- Whether to deploy or visualize results in a lightweight app (e.g., Streamlit).
+- What additional regularization or architectural tweaks (dropout, batch norm, etc.) are useful once baseline model is built.
+
+## Next Steps
+- Engineer features and labels for each player-season from 2016–2024.
+- Normalize price and fantasy avg per season.
+- Generate a training/validation split (likely year-based).
+- Implement baseline MLP model in PyTorch.
+- Train and evaluate.
+- Optionally iterate or extend with advanced models or visualization tools.
+
+This document serves as the reference context for all future implementation and AI pair programming. Any changes to this plan will be documented in a follow-up changelog.
+

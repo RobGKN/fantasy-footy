@@ -1,0 +1,6 @@
+# Ignore training data
+data/
+afl_fantasy_data/
+game_logs/
+yearly_averages/
+yearly_stats/

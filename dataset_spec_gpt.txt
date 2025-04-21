@@ -1,0 +1,80 @@
+# AFL Fantasy ML Dataset Specification
+
+This document outlines the structure, sources, and data types of all features available in the AFL Fantasy dataset, prepared for machine learning applications. The dataset spans player performance and pricing data from 2017 to 2025 and supports building models to predict fantasy outcomes or inform player recommendations.
+
+## Primary Unit of Analysis
+Each row represents a single player in a single season. The goal is typically to predict a player's performance in year Y, using information from year Y-1 and earlier.
+
+## Data Sources
+
+### 1. `afl_fantasy_YEAR.csv`
+Scraped from DreamTeamTalk. Contains player metadata and fantasy pricing.
+
+| Column              | Type    | Description                                               |
+|---------------------|---------|-----------------------------------------------------------|
+| Player              | string  | Full player name                                          |
+| Club                | string  | Team abbreviation or name                                 |
+| Position            | string  | Player role: MID, DEF, RUC, FWD or combinations           |
+| CurrentYearPrice    | float   | Fantasy price for that year                               |
+| PrevYearAverage     | float   | Average fantasy points per game last season               |
+| PrevYearAdjAverage  | float   | Adjusted average, penalizing small game counts            |
+| PrevYearGames       | int     | Number of games played last season                        |
+| PricedAt            | float   | Effective fantasy average used to set price               |
+| Year                | int     | Season year                                               |
+
+Covers years: 2017 to 2025
+
+### 2. `afl_fantasy_selections_YEAR.csv`
+Scraped using Selenium from a fantasy selection tracking site. Shows selection popularity by user ranking tier.
+
+| Column         | Type   | Description                            |
+|----------------|--------|----------------------------------------|
+| player_name    | string | Player full name                        |
+| top_10k ... top_1 | float | Fraction of top users selecting player |
+| year           | int    | Season year                             |
+
+Available for: 2023, 2024 (and possibly merged in `selections_all.csv`)
+
+### 3. `*_yearly_averages.csv`
+Extracted from AFLTables. Provides per-season per-player stat averages.
+
+| Column | Type   | Description                         |
+|--------|--------|-------------------------------------|
+| Year   | int    | Season year                         |
+| Team   | string | Team name                           |
+| #      | int    | Jersey number                       |
+| GM     | int    | Games played                        |
+| W-D-L  | string | Wins-Draws-Losses                   |
+| KI     | float  | Kicks                               |
+| MK     | float  | Marks                               |
+| HB     | float  | Handballs                           |
+| DI     | float  | Disposals                           |
+| GL     | float  | Goals                               |
+| BH     | float  | Behinds                             |
+| HO     | float  | Hitouts                             |
+| TK     | float  | Tackles                             |
+| RB     | float  | Rebound 50s                         |
+| IF     | float  | Inside 50s                          |
+| CL     | float  | Clearances                          |
+| CG     | float  | Clangers                            |
+| FF     | float  | Frees For                           |
+| FA     | float  | Frees Against                       |
+| BR     | float  | Brownlow Votes                      |
+| CP     | float  | Contested Possessions               |
+| UP     | float  | Uncontested Possessions             |
+| CM     | float  | Contested Marks                     |
+| MI     | float  | Marks Inside 50                     |
+| 1%     | float  | One Percenters                      |
+| BO     | float  | Bounces                             |
+| GA     | float  | Goal Assists                        |
+
+Most stats are per-game averages.
+
+### 4. `*_game_logs_year0.csv`
+Game-by-game raw logs for each player (partially processed).
+
+Expected Columns:
+- Round number
+- Date
+- Opponent
+- Full set of match stats per game
