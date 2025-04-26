@@ -1,0 +1,261 @@
+2025-04-26 16:40:26,286 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:40:26,287 - INFO - Loading data...
+2025-04-26 16:41:15,626 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:41:15,627 - INFO - Loading data...
+2025-04-26 16:41:15,688 - INFO - Loaded 5170 player-season records
+2025-04-26 16:41:15,689 - INFO - Normalizing features and generating labels...
+2025-04-26 16:41:15,719 - INFO - Training set size: 4585
+2025-04-26 16:41:15,719 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:41:15,719 - INFO - Starting model training...
+2025-04-26 16:45:08,927 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:45:08,927 - INFO - Loading data...
+2025-04-26 16:45:08,961 - INFO - Loaded 5170 player-season records
+2025-04-26 16:45:08,961 - INFO - Normalizing features and generating labels...
+2025-04-26 16:45:08,979 - INFO - Training set size: 4585
+2025-04-26 16:45:08,979 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:45:08,979 - INFO - Starting model training...
+2025-04-26 16:48:41,983 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:48:41,984 - INFO - Loading data...
+2025-04-26 16:48:42,013 - INFO - Loaded 5170 player-season records
+2025-04-26 16:48:42,013 - INFO - Normalizing features and generating labels...
+2025-04-26 16:48:42,029 - INFO - Training set size: 4585
+2025-04-26 16:48:42,029 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:48:42,029 - INFO - Starting model training...
+2025-04-26 16:50:14,726 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:50:14,726 - INFO - Loading data...
+2025-04-26 16:50:14,770 - INFO - Loaded 5170 player-season records
+2025-04-26 16:50:14,770 - INFO - Normalizing features and generating labels...
+2025-04-26 16:50:14,792 - INFO - Training set size: 4585
+2025-04-26 16:50:14,792 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:50:14,792 - INFO - Starting model training...
+2025-04-26 16:55:06,133 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:55:06,133 - INFO - Loading data...
+2025-04-26 16:55:06,168 - INFO - Loaded 5170 player-season records
+2025-04-26 16:55:06,169 - INFO - Normalizing features and generating labels...
+2025-04-26 16:55:06,285 - INFO - Training set size: 4585
+2025-04-26 16:55:06,285 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:55:06,285 - INFO - Starting model training...
+2025-04-26 16:58:39,894 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 16:58:39,894 - INFO - Loading data...
+2025-04-26 16:58:39,925 - INFO - Loaded 5170 player-season records
+2025-04-26 16:58:39,926 - INFO - Normalizing features and generating labels...
+2025-04-26 16:58:40,046 - INFO - Training set size: 4585
+2025-04-26 16:58:40,047 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 16:58:40,047 - INFO - Starting model training...
+2025-04-26 17:03:46,029 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 17:03:46,029 - INFO - Loading data...
+2025-04-26 17:03:46,059 - INFO - Loaded 5170 player-season records
+2025-04-26 17:03:46,059 - INFO - Normalizing features and generating labels...
+2025-04-26 17:03:46,073 - INFO - Checking for missing values...
+2025-04-26 17:03:46,075 - INFO - 
+Missing value summary:
+Player                     0
+Average_Points             6
+Games_Played               6
+Next_Year_Price            0
+Year                       0
+KI                        12
+MK                        52
+HB                        20
+DI                         5
+GL                      1208
+BH                      1185
+HO                      3978
+TK                        49
+RB                       383
+IF                       140
+CL                       461
+CG                        61
+FF                       245
+FA                       220
+BR                      3439
+CP                        19
+UP                        11
+CM                       857
+MI                      1293
+1%                       121
+BO                      1971
+GA                       934
+Average_Points_norm        6
+Next_Year_Price_norm       0
+value_score                6
+breakout                   0
+2025-04-26 17:03:46,076 - INFO - Dropped 6 rows due to missing 'Average_Points' or 'Games_Played'
+2025-04-26 17:03:46,080 - INFO - Filled missing stat features (22 columns) with 0
+2025-04-26 17:03:46,084 - INFO - Training set size: 4579
+2025-04-26 17:03:46,085 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 17:03:46,085 - INFO - Starting model training...
+2025-04-26 17:04:08,268 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 17:04:08,269 - INFO - Loading data...
+2025-04-26 17:04:08,296 - INFO - Loaded 5170 player-season records
+2025-04-26 17:04:08,296 - INFO - Normalizing features and generating labels...
+2025-04-26 17:04:08,310 - INFO - Checking for missing values...
+2025-04-26 17:04:08,311 - INFO - 
+Missing value summary:
+Player                     0
+Average_Points             6
+Games_Played               6
+Next_Year_Price            0
+Year                       0
+KI                        12
+MK                        52
+HB                        20
+DI                         5
+GL                      1208
+BH                      1185
+HO                      3978
+TK                        49
+RB                       383
+IF                       140
+CL                       461
+CG                        61
+FF                       245
+FA                       220
+BR                      3439
+CP                        19
+UP                        11
+CM                       857
+MI                      1293
+1%                       121
+BO                      1971
+GA                       934
+Average_Points_norm        6
+Next_Year_Price_norm       0
+value_score                6
+breakout                   0
+2025-04-26 17:04:08,312 - INFO - Dropped 6 rows due to missing 'Average_Points' or 'Games_Played'
+2025-04-26 17:04:08,318 - INFO - Filled missing stat features (22 columns) with 0
+2025-04-26 17:04:08,323 - INFO - Training set size: 4579
+2025-04-26 17:04:08,323 - INFO - Validation (test_year=2024) set size: 585
+2025-04-26 17:04:08,323 - INFO - Starting model training...
+2025-04-26 17:04:15,656 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-26 17:04:15,657 - INFO - Evaluating on holdout (validation) set...
+2025-04-26 17:04:15,668 - INFO - Validation ROC-AUC (holdout year 2024): 0.9518
+2025-04-26 18:08:47,101 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 18:08:47,101 - INFO - Loading data...
+2025-04-26 18:08:47,177 - INFO - Loaded 10578 player-season records
+2025-04-26 18:08:47,177 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-26 18:08:47,178 - INFO - Filtered to 3166 labeled player-season records
+2025-04-26 18:08:47,183 - INFO - Training set size: 3166
+2025-04-26 18:08:47,183 - INFO - Validation (test_year=2024) set size: 0
+2025-04-26 18:08:47,183 - INFO - Starting model training with input dimension 50...
+2025-04-26 18:12:39,914 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 18:12:39,914 - INFO - Loading data...
+2025-04-26 18:12:39,986 - INFO - Loaded 10578 player-season records
+2025-04-26 18:12:39,987 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-26 18:12:39,989 - INFO - Filtered to 3166 labeled player-season records
+2025-04-26 18:12:39,989 - INFO - Checking for remaining NaNs in features...
+2025-04-26 18:12:39,991 - WARNING - Found NaNs in these columns:
+last_year_KI       2
+last_year_MK      21
+last_year_HB       7
+last_year_GL     727
+last_year_BH     459
+                ... 
+CM              3166
+MI              3166
+1%              3166
+BO              3166
+GA              3166
+Length: 67, dtype: int64
+2025-04-26 18:12:39,991 - INFO - Dropping rows with NaNs...
+2025-04-26 18:12:39,992 - INFO - Dropped 3166 rows due to NaNs.
+2025-04-26 18:18:31,540 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 18:18:31,540 - INFO - Loading data...
+2025-04-26 18:18:31,607 - INFO - Loaded 10578 player-season records
+2025-04-26 18:18:31,607 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-26 18:18:31,608 - INFO - Filtered to 3166 labeled player-season records
+2025-04-26 18:18:31,610 - INFO - Checking for remaining NaNs in selected features...
+2025-04-26 18:18:31,611 - WARNING - NaNs in training features:
+last_year_KI       2
+last_year_MK      18
+last_year_HB       7
+last_year_GL     649
+last_year_BH     379
+last_year_HO    1825
+last_year_TK      15
+last_year_RB     122
+last_year_IF      37
+last_year_CL     149
+last_year_CG      19
+last_year_FF      63
+last_year_FA      62
+last_year_BR    1438
+last_year_CP       5
+last_year_UP       1
+last_year_CM     261
+last_year_MI     421
+last_year_1%      32
+last_year_BO     706
+last_year_GA     298
+3yr_avg_KI         5
+3yr_avg_MK        32
+3yr_avg_HB        16
+3yr_avg_GL       875
+3yr_avg_BH       606
+3yr_avg_HO      2014
+3yr_avg_TK        34
+3yr_avg_RB       255
+3yr_avg_IF        75
+3yr_avg_CL       304
+3yr_avg_CG        42
+3yr_avg_FF       410
+3yr_avg_FA       140
+3yr_avg_BR      1871
+3yr_avg_CP         9
+3yr_avg_UP         3
+3yr_avg_CM       764
+3yr_avg_MI       931
+3yr_avg_1%        73
+3yr_avg_BO      1361
+3yr_avg_GA       528
+dtype: int64
+2025-04-26 18:18:31,612 - INFO - Dropped 2310 rows from training due to NaNs in selected features.
+2025-04-26 18:18:31,614 - WARNING - NaNs in validation features:
+last_year_MK      3
+last_year_GL     78
+last_year_BH     80
+last_year_HO    331
+last_year_TK      3
+last_year_RB     29
+last_year_IF      8
+last_year_CL     27
+last_year_CG      1
+last_year_FF     13
+last_year_FA     14
+last_year_BR    249
+last_year_CM     58
+last_year_MI     91
+last_year_1%      6
+last_year_BO    125
+last_year_GA     59
+3yr_avg_KI        2
+3yr_avg_MK       12
+3yr_avg_HB        2
+3yr_avg_DI        1
+3yr_avg_GL      163
+3yr_avg_BH      163
+3yr_avg_HO      377
+3yr_avg_TK       10
+3yr_avg_RB       65
+3yr_avg_IF       21
+3yr_avg_CL       87
+3yr_avg_CG        4
+3yr_avg_FF       40
+3yr_avg_FA       33
+3yr_avg_BR      367
+3yr_avg_CP        3
+3yr_avg_UP        1
+3yr_avg_CM      131
+3yr_avg_MI      166
+3yr_avg_1%       17
+3yr_avg_BO      265
+3yr_avg_GA      132
+dtype: int64
+2025-04-26 18:18:31,615 - INFO - Dropped 441 rows from validation due to NaNs in selected features.
+2025-04-26 18:18:31,616 - INFO - Training set size: 361
+2025-04-26 18:18:31,616 - INFO - Validation (test_year=2023) set size: 54
+2025-04-26 18:18:31,616 - INFO - Starting model training with input dimension 50...
+2025-04-26 18:18:33,118 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-26 18:18:33,119 - INFO - Evaluating on holdout (validation) set...
+2025-04-26 18:18:33,124 - INFO - Validation ROC-AUC (holdout year 2023): 0.5196

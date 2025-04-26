@@ -1,14 +1,20 @@
-import unittest
-from src.utils import calculate_metrics
+from src.utils import normalize_per_year, compute_value_score, generate_labels
 
-class TestUtils(unittest.TestCase):
-    def test_calculate_metrics(self):
-        predictions = [1, 0, 1, 1]
-        labels = [1, 0, 1, 0]
-        metrics = calculate_metrics(predictions, labels)
-        self.assertAlmostEqual(metrics["accuracy"], 0.75)
-        self.assertAlmostEqual(metrics["f1"], 0.8)
-        self.assertAlmostEqual(metrics["roc_auc"], 0.75)
+def test_normalization(dummy_dataframe):
+    df = normalize_per_year(dummy_dataframe, ['Average_Points', 'Next_Year_Price'])
+    assert 'Average_Points_norm' in df.columns
+    assert 'Next_Year_Price_norm' in df.columns
+    assert not df['Average_Points_norm'].isnull().any()
 
-if __name__ == "__main__":
-    unittest.main()
+def test_value_score(dummy_dataframe):
+    df = normalize_per_year(dummy_dataframe, ['Average_Points', 'Next_Year_Price'])
+    df = compute_value_score(df)
+    assert 'value_score' in df.columns
+    assert not df['value_score'].isnull().any()
+
+def test_generate_labels(dummy_dataframe):
+    df = normalize_per_year(dummy_dataframe, ['Average_Points', 'Next_Year_Price'])
+    df = compute_value_score(df)
+    df = generate_labels(df, 'value_score', threshold=0.5)  # 50% quantile for testing
+    assert 'breakout' in df.columns
+    assert set(df['breakout'].unique()).issubset({0, 1})

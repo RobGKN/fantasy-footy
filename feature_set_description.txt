@@ -1,0 +1,100 @@
+# AFL Fantasy Breakout Detector — Feature Set Description (Current Design)
+
+## Overview
+This document defines the set of features currently planned for the AFL Fantasy "Breakout Detector" model. These features reflect the design decisions and context established in the project specification documents (`AI_PAIR_PROGRAMMER_CONTEXT.txt` and `dataset_spec_gpt.txt`).
+
+The core unit of analysis is **player-season**, with each record representing one player in one AFL season. The model will use information from the **previous three seasons (sliding window)** to predict breakout status for the current season. If a player has fewer than three prior seasons, padding is applied with explicit flags distinguishing between "rookie has not debuted" and "season outside dataset range."
+
+---
+
+## Input Feature Structure (Per Player-Season Row)
+
+### General Player Metadata:
+| Feature               | Description                                 |
+|-----------------------|---------------------------------------------|
+| player_name / player_id | Unique identifier for the player           |
+| year                  | Target season year (Y)                     |
+| age_in_Y              | Player age in target year                   |
+| position              | Categorical role: MID, DEF, RUC, FWD, combos |
+| team                  | Team name or abbreviation                   |
+| debut_year            | First AFL season played                     |
+| career_stage          | Derived from debut year and current year (e.g., Rookie, Prime, Veteran) |
+| total_career_games    | Total games played before year Y           |
+
+---
+
+## Per-Season Historical Features (for Each of Last 3 Seasons Prior to Target Year)
+For each historical season slot: `season_minus_1`, `season_minus_2`, `season_minus_3`
+
+### Fantasy Pricing / Performance Features:
+| Feature                     | Description                                       |
+|-----------------------------|---------------------------------------------------|
+| prev_year_avg               | Average fantasy points per game                  |
+| prev_year_adj_avg           | Adjusted average (penalizing low game counts)    |
+| prev_year_games             | Number of games played                          |
+| priced_at                   | Price-derived effective fantasy average         |
+| start_price                 | Fantasy price at start of that year             |
+| normalized_start_price      | Price normalized within the season (e.g., z-score or division by mean) |
+
+### Performance Stats (from `*_yearly_averages.csv`):
+| Feature               | Description                       |
+|-----------------------|-----------------------------------|
+| disposals             | Total disposals (DI)              |
+| kicks                 | Kicks (KI)                        |
+| handballs             | Handballs (HB)                    |
+| marks                 | Marks (MK)                        |
+| contested_marks       | Contested Marks (CM)              |
+| goals                 | Goals (GL)                        |
+| behinds               | Behinds (BH)                      |
+| goal_assists          | Goal Assists (GA)                 |
+| tackles               | Tackles (TK)                      |
+| hitouts               | Hitouts (HO)                      |
+| clearances            | Clearances (CL)                   |
+| inside_50             | Inside 50s (IF)                   |
+| rebound_50            | Rebound 50s (RB)                  |
+| contested_possessions | Contested Possessions (CP)        |
+| uncontested_possessions | Uncontested Possessions (UP)    |
+| clangers              | Clangers (CG)                     |
+| frees_for             | Frees For (FF)                    |
+| frees_against         | Frees Against (FA)                |
+| brownlow_votes        | Brownlow Votes (BR)               |
+
+---
+
+## Padding Flags (For Each Season Slot)
+| Feature                | Description                                    |
+|------------------------|------------------------------------------------|
+| played_this_year       | 1 if player played at least one game that year |
+| no_data_due_to_rookie  | 1 if padding is because player had not debuted |
+| no_data_due_to_cutoff  | 1 if padding is because year is outside dataset bounds |
+
+**Note:** One or both padding flags will be set if no data is available for that season slot. Played status is independent of these (a player may be listed but miss an entire season due to injury).
+
+---
+
+## Optional Derived Features (Stretch Goals / Phase 2):
+| Feature                    | Description                                      |
+|----------------------------|--------------------------------------------------|
+| late_season_avg            | Average over last 5 games of the prior season    |
+| year_on_year_stat_deltas   | Change in key stats from Y-2 to Y-1              |
+| stat_consistency           | Stddev or IQR of performance metrics (if using game logs) |
+| injury_history_flag        | Binary feature if player missed significant time (if data available) |
+
+---
+
+## Output / Target Label
+- **Breakout (binary):** 1 if the player is considered a breakout in season Y, 0 otherwise.
+- Based on the normalized value score formula:
+  ```
+  value_score = normalized_fantasy_avg / normalized_start_price
+  ```
+- Breakout threshold to be defined (e.g., top X% of value scores or fixed threshold).
+
+---
+
+## Notes:
+- Normalization of price and fantasy averages will be applied per season to adjust for inflation.
+- Feature selection may be iteratively refined based on initial experiments and correlation analysis.
+
+This document reflects the current feature design and will be updated if the feature engineering plan changes significantly.
+

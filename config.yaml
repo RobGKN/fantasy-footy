@@ -1,0 +1,22 @@
+# config.yaml
+
+data:
+  output_dir: "output/"
+  normalize_columns: ["Average_Points", "Next_Year_Price"]
+  label_threshold: 0.15
+  test_year: 2023
+
+model:
+  input_dropout: 0.3
+  hidden_dims: [256, 128, 64, 32]
+  output_dropout: 0.3
+
+training:
+  batch_size: 64
+  epochs: 1000
+  learning_rate: 0.001
+  patience: 25
+  save_path: "output/training/mlp_breakout_model.pt"
+
+logging:
+  log_file: "output/training/training_log.txt"
