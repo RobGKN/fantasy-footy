@@ -116,6 +116,10 @@ def parse_player_name(name):
     return firstname, lastname
 
 def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="sample_data", output_dir="output"):
+    import pandas as pd
+    import os
+    from src.utils import compute_value_score, generate_labels, normalize_per_year
+
     os.makedirs(output_dir, exist_ok=True)
     all_yearly_files = {}
 
@@ -126,6 +130,7 @@ def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="
             all_yearly_files[year] = pd.read_feather(file_path)
         else:
             print(f"WARNING: Missing summary file for year {year}")
+
     # Identify bad players (missing Average_Points or Games_Played)
     bad_players = set()
     for year_df in all_yearly_files.values():
@@ -135,11 +140,12 @@ def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="
         bad_players.update(bad_rows['Player'].unique())
 
     print(f"Excluding {len(bad_players)} players due to missing critical stats (Games_Played or Average_Points).")
+    print("Players being excluded due to missing stats:", sorted(bad_players))
+
     # Filter them out of all years:
     for year in all_yearly_files:
         all_yearly_files[year] = all_yearly_files[year][~all_yearly_files[year]['Player'].isin(bad_players)]
-        
-        
+
     aggregated_all_years = []
 
     for target_year in range(start_year, end_year + 1):
@@ -148,7 +154,7 @@ def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="
         if target_data is None:
             print(f"Skipping {target_year}, no summary file.")
             continue
-            
+
         aggregated_rows = []
         for _, row in target_data.iterrows():
             player = row['Player']
@@ -227,16 +233,42 @@ def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="
     if aggregated_all_years:
         full_aggregated_df = pd.concat(aggregated_all_years, ignore_index=True)
 
-        # Attach future points for label calculation ----
-        future_points_lookup = pd.concat(all_yearly_files.values(), ignore_index=True)[['Player', 'Year', 'Average_Points']]
-        future_points_lookup = future_points_lookup.rename(columns={
-            'Year': 'Future_Year',
-            'Average_Points': 'future_avg_points'
-        })
+        # NEW: Build future points lookup from AFL Fantasy CSVs (not yearly averages)
+        future_points_list = []
+        for year in range(start_year, end_year + 1):
+            future_csv_path = os.path.join(data_path, "afl_fantasy_data", f"afl_fantasy_{year + 1}.csv")
+            if os.path.exists(future_csv_path):
+                df_future = pd.read_csv(future_csv_path)
+                df_future['Future_Year'] = year + 1
+                df_future = df_future.rename(columns={
+                    'Player': 'Player',
+                    'Prev_Year_Ave': 'future_avg_points'
+                })
+                future_points_list.append(df_future[['Player', 'Future_Year', 'future_avg_points']])
+        future_points_lookup = pd.concat(future_points_list, ignore_index=True)
 
         # Add "future year" column to aggregated data
         full_aggregated_df['Future_Year'] = full_aggregated_df['Year'] + 1
 
+        #fixup name mismatch with csv before merge
+        def standardize_player_name(name):
+            firstname, lastname = parse_player_name(name)
+            if firstname is None or lastname is None:
+                return None  # Handles the malformed case gracefully
+            return f"{firstname}_{lastname}"
+
+        future_points_lookup['Player'] = future_points_lookup['Player'].apply(standardize_player_name)
+        
+        ##sanity check danger
+        #example_player = "Patrick_Dangerfield"
+        #example_year = 2016
+        #future_year = example_year + 1
+#
+        ## Check if this player exists in future_points_lookup
+        #print("sanity check", future_points_lookup[(future_points_lookup['Player'] == example_player) & (future_points_lookup['Future_Year'] == future_year)])
+        #print("sanity check", future_points_lookup.head(10))
+        #print("check name func Dangerfield, Patrick: ", standardize_player_name("Dangerfield, Patrick"))
+        
         # Join future points back onto the current year rows
         full_aggregated_df = pd.merge(
             full_aggregated_df,
@@ -245,9 +277,21 @@ def generate_aggregated_3yr_features(start_year=2016, end_year=2024, data_path="
             right_on=['Player', 'Future_Year'],
             how='left'
         )
+        # After your merge:
+        missing_join = full_aggregated_df[full_aggregated_df['future_avg_points'].isnull()]
 
-        # Label availability flag
+        print(f"Number of rows where the join failed (future_avg_points is NaN): {len(missing_join)}")
+        print("Example players where join failed:")
+        print(missing_join[['Player', 'Year', 'Future_Year']].head(20))
+        
+        # Corrected label availability logic
         full_aggregated_df['label_available'] = full_aggregated_df['future_avg_points'].notnull().astype(int)
+
+        # Handle DNP players (listed but zero games → NaN future_avg_points → set to 0)
+        full_aggregated_df.loc[
+            (full_aggregated_df['label_available'] == 1) & (full_aggregated_df['future_avg_points'].isnull()),
+            'future_avg_points'
+        ] = 0
 
         # Only normalize and label rows where label is available
         label_ready_df = full_aggregated_df[full_aggregated_df['label_available'] == 1].copy()

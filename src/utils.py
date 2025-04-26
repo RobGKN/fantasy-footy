@@ -1,5 +1,8 @@
 import pandas as pd
 import logging
+import yaml
+import glob
+import os
 """
 utils.py
 
@@ -83,3 +86,12 @@ def report_and_handle_missing_values(df, critical_cols, stat_cols):
     logging.info(f"Filled missing stat features ({len(stat_cols)} columns) with 0")
 
     return df
+
+def load_config(config_path="config.yaml"):
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)
+
+def load_all_years(output_dir):
+    all_files = glob.glob(f"{output_dir}/*.feather")
+    dfs = [pd.read_feather(f) for f in all_files]
+    return pd.concat(dfs, ignore_index=True)

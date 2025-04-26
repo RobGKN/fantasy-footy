@@ -8,14 +8,14 @@ data:
 
 model:
   input_dropout: 0.3
-  hidden_dims: [256, 128, 64, 32]
+  hidden_dims: [512, 256, 128, 64, 32]
   output_dropout: 0.3
 
 training:
   batch_size: 64
-  epochs: 1000
+  epochs: 2000
   learning_rate: 0.001
-  patience: 25
+  patience: 100
   save_path: "output/training/mlp_breakout_model.pt"
 
 logging:

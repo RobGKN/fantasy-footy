@@ -11,6 +11,14 @@ run-training:
 	@echo "Running training pipeline..."
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/run_training.py
 
+query-model:
+	@echo "Running top-10 breakout prediction inference..."
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/query_model.py
+
+individual-data-query:
+	@echo "Running individual player data query..."
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/individual_data_query.py Tom_Doedee
+
 test:
 	@echo "Running tests..."
 	PYTHONPATH=$(PYTHONPATH) pytest tests/
