@@ -1,0 +1,31 @@
+|--- last_year_games <= 13.50
+|   |--- last_year_MI <= 2.11
+|   |   |--- last_year_games <= 9.50
+|   |   |   |--- last_year_avg_points <= 48.55
+|   |   |   |   |--- last_year_FA <= 0.20
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- last_year_FA >  0.20
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- last_year_avg_points >  48.55
+|   |   |   |   |--- class: 1
+|   |   |--- last_year_games >  9.50
+|   |   |   |--- last_year_UP <= 9.83
+|   |   |   |   |--- 3yr_avg_CP <= 6.06
+|   |   |   |   |   |--- 3yr_avg_IF <= 1.12
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- 3yr_avg_IF >  1.12
+|   |   |   |   |   |   |--- last_year_avg_points <= 54.90
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- last_year_avg_points >  54.90
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- 3yr_avg_CP >  6.06
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- last_year_UP >  9.83
+|   |   |   |   |--- class: 0
+|   |--- last_year_MI >  2.11
+|   |   |--- class: 0
+|--- last_year_games >  13.50
+|   |--- 3yr_avg_CG <= 1.38
+|   |   |--- class: 1
+|   |--- 3yr_avg_CG >  1.38
+|   |   |--- class: 0

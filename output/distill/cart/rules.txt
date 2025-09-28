@@ -1,0 +1,70 @@
+|--- last_year_avg_points <= 81.62
+|   |--- last_year_avg_points <= 47.45
+|   |   |--- last_year_GL <= 0.11
+|   |   |   |--- 3yr_avg_DI <= 12.94
+|   |   |   |   |--- 3yr_avg_CL <= 0.89
+|   |   |   |   |   |--- value: [-1.89]
+|   |   |   |   |--- 3yr_avg_CL >  0.89
+|   |   |   |   |   |--- value: [-1.45]
+|   |   |   |--- 3yr_avg_DI >  12.94
+|   |   |   |   |--- value: [-2.43]
+|   |   |--- last_year_GL >  0.11
+|   |   |   |--- last_year_FA <= 0.69
+|   |   |   |   |--- last_year_games <= 5.50
+|   |   |   |   |   |--- value: [-1.20]
+|   |   |   |   |--- last_year_games >  5.50
+|   |   |   |   |   |--- value: [-1.55]
+|   |   |   |--- last_year_FA >  0.69
+|   |   |   |   |--- value: [-1.75]
+|   |--- last_year_avg_points >  47.45
+|   |   |--- last_year_avg_points <= 73.58
+|   |   |   |--- last_year_games <= 16.50
+|   |   |   |   |--- last_year_avg_points <= 51.58
+|   |   |   |   |   |--- value: [-1.30]
+|   |   |   |   |--- last_year_avg_points >  51.58
+|   |   |   |   |   |--- value: [-0.88]
+|   |   |   |--- last_year_games >  16.50
+|   |   |   |   |--- last_year_avg_points <= 69.10
+|   |   |   |   |   |--- value: [-1.13]
+|   |   |   |   |--- last_year_avg_points >  69.10
+|   |   |   |   |   |--- value: [-1.59]
+|   |   |--- last_year_avg_points >  73.58
+|   |   |   |--- last_year_games <= 14.50
+|   |   |   |   |--- 3yr_avg_HB <= 7.75
+|   |   |   |   |   |--- value: [-1.30]
+|   |   |   |   |--- 3yr_avg_HB >  7.75
+|   |   |   |   |   |--- value: [-1.93]
+|   |   |   |--- last_year_games >  14.50
+|   |   |   |   |--- last_year_DI <= 18.66
+|   |   |   |   |   |--- value: [-1.96]
+|   |   |   |   |--- last_year_DI >  18.66
+|   |   |   |   |   |--- value: [-2.44]
+|--- last_year_avg_points >  81.62
+|   |--- last_year_avg_points <= 96.47
+|   |   |--- last_year_avg_points <= 88.47
+|   |   |   |--- last_year_DI <= 17.88
+|   |   |   |   |--- value: [-2.37]
+|   |   |   |--- last_year_DI >  17.88
+|   |   |   |   |--- 3yr_avg_IF <= 2.68
+|   |   |   |   |   |--- value: [-2.72]
+|   |   |   |   |--- 3yr_avg_IF >  2.68
+|   |   |   |   |   |--- value: [-3.03]
+|   |   |--- last_year_avg_points >  88.47
+|   |   |   |--- 3yr_avg_DI <= 19.83
+|   |   |   |   |--- value: [-3.02]
+|   |   |   |--- 3yr_avg_DI >  19.83
+|   |   |   |   |--- last_year_avg_points <= 92.76
+|   |   |   |   |   |--- value: [-3.37]
+|   |   |   |   |--- last_year_avg_points >  92.76
+|   |   |   |   |   |--- value: [-3.67]
+|   |--- last_year_avg_points >  96.47
+|   |   |--- last_year_avg_points <= 106.95
+|   |   |   |--- 3yr_avg_IF <= 3.07
+|   |   |   |   |--- value: [-3.77]
+|   |   |   |--- 3yr_avg_IF >  3.07
+|   |   |   |   |--- last_year_avg_points <= 101.33
+|   |   |   |   |   |--- value: [-4.02]
+|   |   |   |   |--- last_year_avg_points >  101.33
+|   |   |   |   |   |--- value: [-4.41]
+|   |   |--- last_year_avg_points >  106.95
+|   |   |   |--- value: [-4.93]

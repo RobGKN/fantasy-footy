@@ -24,9 +24,22 @@ logging:
 distill:
   cart:
     output_dir: "output/distill/cart/"
-    max_depth: 5
-    min_samples_leaf: 50
-    ccp_alpha: 0.0        # 0 to start; you can try small >0 later
-    regress_on: "logits"  # fixed for simplicity
+    mode: "classification"     
+    max_depth: 9
+    min_samples_leaf: 8
+    ccp_alpha: 0.001           # light pruning for stability
     k_top_picks: 22
     random_trials: 100
+
+    # turn off global weighting while we tune the band
+    weight_top_quantile: 0.0
+    top_weight: 1.0
+    rest_weight: 1.0
+
+    # surgical top-focus training
+    top_focus_enabled: true
+    focus_by_k: true           # match K/|val| density in train
+    focus_top_fraction: 0.05   # ignored when focus_by_k=true
+    neg_band_width: 0.03       # narrow band just below positive threshold
+    pos_weight: 35.0
+    neg_weight: 1.0

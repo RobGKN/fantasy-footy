@@ -1,0 +1,27 @@
+{
+  "spearman_fidelity_logit": 0.2848057304633699,
+  "topk_overlap": 0.13636363636363635,
+  "teacher_topk_recall_in_student": 0.13636363636363635,
+  "auc_student": 0.5952591083955645,
+  "auc_teacher": 0.6739533831183526,
+  "team_value_model": 0.0988040629095675,
+  "team_value_random": 0.09669582307054345,
+  "cart_params": {
+    "mode": "classification",
+    "max_depth": 8,
+    "min_samples_leaf": 10,
+    "ccp_alpha": 0.001,
+    "seed": 42
+  },
+  "k_top_picks": 22,
+  "random_trials": 100,
+  "top_focus_enabled": true,
+  "focus_by_k": true,
+  "focus_top_fraction": 0.05,
+  "neg_band_width": 0.02,
+  "pos_weight": 25.0,
+  "neg_weight": 1.0,
+  "weight_top_quantile": 0.0,
+  "top_weight": 1.0,
+  "rest_weight": 1.0
+}

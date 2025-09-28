@@ -1,0 +1,22 @@
+|--- last_year_games <= 13.50
+|   |--- last_year_games <= 9.50
+|   |   |--- class: 1
+|   |--- last_year_games >  9.50
+|   |   |--- last_year_UP <= 9.83
+|   |   |   |--- 3yr_avg_CP <= 6.07
+|   |   |   |   |--- 3yr_avg_GL <= 0.14
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- 3yr_avg_GL >  0.14
+|   |   |   |   |   |--- last_year_GA <= 0.57
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- last_year_GA >  0.57
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- 3yr_avg_CP >  6.07
+|   |   |   |   |--- class: 0
+|   |   |--- last_year_UP >  9.83
+|   |   |   |--- class: 0
+|--- last_year_games >  13.50
+|   |--- 3yr_avg_GL <= 0.05
+|   |   |--- class: 1
+|   |--- 3yr_avg_GL >  0.05
+|   |   |--- class: 0

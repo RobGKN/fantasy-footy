@@ -1,0 +1,16 @@
+{
+  "spearman_fidelity_logit": 0.8687481223456621,
+  "topk_overlap": 0.0,
+  "auc_student": 0.6591989137813985,
+  "auc_teacher": 0.6739533831183526,
+  "team_value_model": 0.09438223044886627,
+  "team_value_random": 0.0971844935588062,
+  "cart_params": {
+    "max_depth": 5,
+    "min_samples_leaf": 50,
+    "ccp_alpha": 0.0,
+    "seed": 42
+  },
+  "k_top_picks": 22,
+  "random_trials": 100
+}

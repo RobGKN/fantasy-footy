@@ -8,3 +8,4 @@ pyarrow
 pyyaml
 flake8
 black
+joblib
