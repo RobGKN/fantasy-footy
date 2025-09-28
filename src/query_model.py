@@ -17,7 +17,7 @@ def load_model(config, input_dim):
     model.eval()
     return model
 
-def get_top_k_predictions_for_year(df, feature_cols, config, year, k=10):
+def get_top_k_predictions_for_year(df, feature_cols, config, year, k=4):
     val_df = df[df['Year'] == year].copy()
     val_df = val_df.dropna(subset=feature_cols)
 
