@@ -3,20 +3,30 @@
 data:
   output_dir: "output/"
   normalize_columns: ["Average_Points", "Next_Year_Price"]
-  label_threshold: 0.15
-  test_year: 2023
+  label_threshold: 0.30
+  test_year: 2024
 
 model:
   input_dropout: 0.3
-  hidden_dims: [512, 256, 128, 64, 32]
+  hidden_dims: [256, 128, 64, 32]
   output_dropout: 0.3
 
 training:
   batch_size: 64
   epochs: 2000
   learning_rate: 0.001
-  patience: 100
+  patience: 25
   save_path: "output/training/mlp_breakout_model.pt"
 
 logging:
   log_file: "output/training/training_log.txt"
+
+distill:
+  cart:
+    output_dir: "output/distill/cart/"
+    max_depth: 5
+    min_samples_leaf: 50
+    ccp_alpha: 0.0        # 0 to start; you can try small >0 later
+    regress_on: "logits"  # fixed for simplicity
+    k_top_picks: 22
+    random_trials: 100

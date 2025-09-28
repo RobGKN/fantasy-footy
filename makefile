@@ -13,11 +13,11 @@ run-training:
 
 query-model:
 	@echo "Running top-10 breakout prediction inference..."
-	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/query_model.py
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/query_model.py $(SEASON)
 
 individual-data-query:
 	@echo "Running individual player data query..."
-	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/individual_data_query.py Tom_Doedee
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) src/individual_data_query.py $(PLAYER)
 
 test:
 	@echo "Running tests..."
