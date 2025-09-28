@@ -1,0 +1,12 @@
+{
+  "spearman_fidelity_logit": 0.8679785211640324,
+  "topk_overlap": 0.18181818181818182,
+  "auc_student": 0.6553292600135777,
+  "team_value_model": 0.09424418604651164,
+  "team_value_random": 0.09698807691025285,
+  "tree_params": {
+    "max_depth": 3,
+    "min_samples_leaf": 50,
+    "seed": 42
+  }
+}

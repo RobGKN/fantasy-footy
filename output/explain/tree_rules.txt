@@ -1,0 +1,46 @@
+|--- last_year_avg_points <= 81.62
+|   |--- last_year_avg_points <= 47.45
+|   |   |--- last_year_GL <= 0.11
+|   |   |   |--- 3yr_avg_UP <= 10.19
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- 3yr_avg_UP >  10.19
+|   |   |   |   |--- value: [-2.89]
+|   |   |--- last_year_GL >  0.11
+|   |   |   |--- last_year_FA <= 0.69
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- last_year_FA >  0.69
+|   |   |   |   |--- truncated branch of depth 2
+|   |--- last_year_avg_points >  47.45
+|   |   |--- last_year_avg_points <= 73.58
+|   |   |   |--- last_year_games <= 16.50
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- last_year_games >  16.50
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |--- last_year_avg_points >  73.58
+|   |   |   |--- last_year_games <= 14.50
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- last_year_games >  14.50
+|   |   |   |   |--- truncated branch of depth 2
+|--- last_year_avg_points >  81.62
+|   |--- last_year_avg_points <= 96.47
+|   |   |--- last_year_avg_points <= 88.47
+|   |   |   |--- 3yr_avg_HO <= 19.88
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- 3yr_avg_HO >  19.88
+|   |   |   |   |--- value: [-1.96]
+|   |   |--- last_year_avg_points >  88.47
+|   |   |   |--- 3yr_avg_DI <= 19.83
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- 3yr_avg_DI >  19.83
+|   |   |   |   |--- truncated branch of depth 2
+|   |--- last_year_avg_points >  96.47
+|   |   |--- last_year_avg_points <= 106.95
+|   |   |   |--- 3yr_avg_IF <= 3.07
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- 3yr_avg_IF >  3.07
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |--- last_year_avg_points >  106.95
+|   |   |   |--- last_year_avg_points <= 114.50
+|   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- last_year_avg_points >  114.50
+|   |   |   |   |--- value: [-5.41]
