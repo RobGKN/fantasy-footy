@@ -1,0 +1,263 @@
+2025-04-26 21:11:45,302 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 21:11:45,302 - INFO - Loaded configuration:
+2025-04-26 21:11:45,302 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2023}
+2025-04-26 21:11:45,302 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [512, 256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-26 21:11:45,303 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-26 21:11:45,303 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-26 21:11:45,303 - INFO - Loading data...
+2025-04-26 21:11:45,371 - INFO - Loaded 10434 player-season records
+2025-04-26 21:11:45,372 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-26 21:11:45,374 - INFO - Filtered to 5264 labeled player-season records
+2025-04-26 21:11:45,375 - INFO - Checking for remaining NaNs in selected features...
+2025-04-26 21:11:45,380 - INFO - Training set size: 4102
+2025-04-26 21:11:45,380 - INFO - Validation (test_year=2023) set size: 581
+2025-04-26 21:11:45,380 - INFO - Starting model training with input dimension 50...
+2025-04-26 21:12:16,016 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-26 21:12:16,016 - INFO - Evaluating on holdout (validation) set...
+2025-04-26 21:12:16,027 - INFO - Validation ROC-AUC: 0.6454
+2025-04-26 21:12:16,048 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1107
+2025-04-26 21:12:16,048 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1097
+2025-04-26 21:12:16,073 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1106
+2025-04-26 21:12:16,074 - INFO - Player name: ['Taylor_Duryea' 'Joel_Jeffrey' 'Liam_Shiels' 'Kyle_Langford'
+ 'Josh_Rotham' 'Marc_Pittonet' 'Jack_Hayes' 'Jack_Petruccelle'
+ 'Nick_Haynes' 'Ryan_Byrnes']
+2025-04-26 21:12:16,074 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1093
+2025-04-26 21:13:35,771 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-26 21:13:35,771 - INFO - Loaded configuration:
+2025-04-26 21:13:35,772 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2023}
+2025-04-26 21:13:35,772 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-26 21:13:35,772 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-26 21:13:35,772 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-26 21:13:35,772 - INFO - Loading data...
+2025-04-26 21:13:35,845 - INFO - Loaded 10434 player-season records
+2025-04-26 21:13:35,845 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-26 21:13:35,847 - INFO - Filtered to 5264 labeled player-season records
+2025-04-26 21:13:35,848 - INFO - Checking for remaining NaNs in selected features...
+2025-04-26 21:13:35,853 - INFO - Training set size: 4102
+2025-04-26 21:13:35,853 - INFO - Validation (test_year=2023) set size: 581
+2025-04-26 21:13:35,853 - INFO - Starting model training with input dimension 50...
+2025-04-26 21:13:57,915 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-26 21:13:57,915 - INFO - Evaluating on holdout (validation) set...
+2025-04-26 21:13:57,929 - INFO - Validation ROC-AUC: 0.6529
+2025-04-26 21:13:57,954 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1109
+2025-04-26 21:13:57,954 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1098
+2025-04-26 21:13:57,976 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1108
+2025-04-26 21:13:57,978 - INFO - Player name: ['Ryan_Byrnes' 'Rhylee_West' 'Liam_Shiels' 'Neil_Erasmus' 'Kyle_Langford'
+ 'Jack_Petruccelle' 'Will_Day' 'Paddy_Dow' 'Nasiah_Wanganeen-Milera'
+ 'Jed_McEntee']
+2025-04-26 21:13:57,978 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1099
+2025-04-27 01:10:40,901 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:10:40,902 - INFO - Loaded configuration:
+2025-04-27 01:10:40,902 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2018}
+2025-04-27 01:10:40,902 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:10:40,902 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:10:40,902 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:10:40,902 - INFO - Loading data...
+2025-04-27 01:10:41,014 - INFO - Loaded 10434 player-season records
+2025-04-27 01:10:41,015 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:10:41,018 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:10:41,019 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:10:41,022 - INFO - Training set size: 1106
+2025-04-27 01:10:41,022 - INFO - Validation (test_year=2018) set size: 637
+2025-04-27 01:10:41,022 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:10:50,462 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:10:50,462 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:10:50,482 - INFO - Validation ROC-AUC: 0.6305
+2025-04-27 01:10:50,507 - INFO - Model Best 22 Team Value Score (points per $1k): 0.0925
+2025-04-27 01:10:50,507 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1333
+2025-04-27 01:10:50,527 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1205
+2025-04-27 01:10:50,530 - INFO - Player name: ['Rowan_Marshall' 'Scott_Lycett' 'Darcy_Lang' 'Will_Brodie'
+ 'Fraser_McInnes' 'Bailey_Williams' 'Bailey_Williams' 'Bailey_Williams'
+ 'Bailey_Williams' 'Bailey_Williams']
+2025-04-27 01:10:50,531 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1336
+2025-04-27 01:11:18,602 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:11:18,602 - INFO - Loaded configuration:
+2025-04-27 01:11:18,602 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2019}
+2025-04-27 01:11:18,602 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:11:18,602 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:11:18,603 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:11:18,603 - INFO - Loading data...
+2025-04-27 01:11:18,671 - INFO - Loaded 10434 player-season records
+2025-04-27 01:11:18,672 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:11:18,674 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:11:18,675 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:11:18,679 - INFO - Training set size: 1743
+2025-04-27 01:11:18,679 - INFO - Validation (test_year=2019) set size: 631
+2025-04-27 01:11:18,679 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:11:29,821 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:11:29,821 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:11:29,837 - INFO - Validation ROC-AUC: 0.6367
+2025-04-27 01:11:29,860 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1347
+2025-04-27 01:11:29,860 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1307
+2025-04-27 01:11:29,879 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1352
+2025-04-27 01:11:29,880 - INFO - Player name: ['Braydon_Preuss' "Reilly_O'Brien" 'Kade_Kolodjashnij' 'Jackson_Thurlow'
+ 'Tim_English' 'Adam_Kennedy' 'Josh_Bruce' 'Billy_Frampton'
+ 'Jordan_Dawson' 'Jarrod_Lienert']
+2025-04-27 01:11:29,881 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1301
+2025-04-27 01:11:51,192 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:11:51,192 - INFO - Loaded configuration:
+2025-04-27 01:11:51,192 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2020}
+2025-04-27 01:11:51,192 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:11:51,192 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:11:51,192 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:11:51,192 - INFO - Loading data...
+2025-04-27 01:11:51,263 - INFO - Loaded 10434 player-season records
+2025-04-27 01:11:51,264 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:11:51,267 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:11:51,269 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:11:51,275 - INFO - Training set size: 2374
+2025-04-27 01:11:51,275 - INFO - Validation (test_year=2020) set size: 559
+2025-04-27 01:11:51,275 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:12:04,395 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:12:04,395 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:12:04,407 - INFO - Validation ROC-AUC: 0.6390
+2025-04-27 01:12:04,429 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1298
+2025-04-27 01:12:04,429 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1307
+2025-04-27 01:12:04,450 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1241
+2025-04-27 01:12:04,452 - INFO - Player name: ['Alex_Neal-Bullen' 'Steven_Motlop' 'Ryan_Clarke' 'Lewis_Taylor'
+ 'Jackson_Hately' 'Will_Hayes' 'Bailey_Williams' 'Josh_Thomas'
+ 'Daniel_Howe' 'Bailey_Dale']
+2025-04-27 01:12:04,452 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1309
+2025-04-27 01:12:36,680 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:12:36,680 - INFO - Loaded configuration:
+2025-04-27 01:12:36,681 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.15, 'test_year': 2021}
+2025-04-27 01:12:36,681 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:12:36,681 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:12:36,681 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:12:36,681 - INFO - Loading data...
+2025-04-27 01:12:36,749 - INFO - Loaded 10434 player-season records
+2025-04-27 01:12:36,750 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:12:36,752 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:12:36,754 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:12:36,758 - INFO - Training set size: 2933
+2025-04-27 01:12:36,758 - INFO - Validation (test_year=2021) set size: 584
+2025-04-27 01:12:36,758 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:12:51,443 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:12:51,443 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:12:51,455 - INFO - Validation ROC-AUC: 0.6225
+2025-04-27 01:12:51,477 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1179
+2025-04-27 01:12:51,478 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1189
+2025-04-27 01:12:51,497 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1187
+2025-04-27 01:12:51,499 - INFO - Player name: ['Brayden_Fiorini' 'James_Harmes' 'Jack_Redden' 'Sebastian_Ross'
+ 'Mitch_Wallis' 'Mitch_Robinson' 'Rory_Sloane' 'Joel_Selwood'
+ 'Bradley_Hill' 'Harry_Cunningham']
+2025-04-27 01:12:51,499 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1188
+2025-04-27 01:13:34,685 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:13:34,686 - INFO - Loaded configuration:
+2025-04-27 01:13:34,686 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.05, 'test_year': 2023}
+2025-04-27 01:13:34,686 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:13:34,686 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:13:34,686 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:13:34,686 - INFO - Loading data...
+2025-04-27 01:13:34,754 - INFO - Loaded 10434 player-season records
+2025-04-27 01:13:34,755 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:13:34,757 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:13:34,758 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:13:34,764 - INFO - Training set size: 4102
+2025-04-27 01:13:34,765 - INFO - Validation (test_year=2023) set size: 581
+2025-04-27 01:13:34,765 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:13:54,736 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:13:54,737 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:13:54,753 - INFO - Validation ROC-AUC: 0.6456
+2025-04-27 01:13:54,801 - INFO - Model Best 22 Team Value Score (points per $1k): 0.1126
+2025-04-27 01:13:54,801 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.1100
+2025-04-27 01:13:54,834 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.1144
+2025-04-27 01:13:54,836 - INFO - Player name: ['Jack_Petruccelle' 'Joel_Jeffrey' 'Deven_Robertson' 'Rhylee_West'
+ 'Archie_Perkins' 'Jack_Hayes' 'Toby_Bedford' 'Neil_Erasmus' 'Jed_McEntee'
+ 'Connor_Budarick']
+2025-04-27 01:13:54,836 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.1096
+2025-04-27 01:16:14,746 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:16:14,746 - INFO - Loaded configuration:
+2025-04-27 01:16:14,746 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.05, 'test_year': 2024}
+2025-04-27 01:16:14,746 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:16:14,747 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:16:14,747 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:16:14,747 - INFO - Loading data...
+2025-04-27 01:16:14,812 - INFO - Loaded 10434 player-season records
+2025-04-27 01:16:14,813 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:16:14,815 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:16:14,817 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:16:14,821 - INFO - Training set size: 4683
+2025-04-27 01:16:14,822 - INFO - Validation (test_year=2024) set size: 581
+2025-04-27 01:16:14,822 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:16:38,508 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:16:38,508 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:16:38,528 - INFO - Validation ROC-AUC: 0.6575
+2025-04-27 01:16:38,556 - INFO - Model Best 22 Team Value Score (points per $1k): 0.0959
+2025-04-27 01:16:38,556 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.0971
+2025-04-27 01:16:38,579 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.0983
+2025-04-27 01:16:38,580 - INFO - Player name: ['Tom_Brown' 'Finlay_Macrae' 'Jeremy_Howe' 'Brayden_Cook' 'Luke_Nankervis'
+ 'Lachie_Fogarty' 'Jhye_Clark' 'Rhys_Stanley' 'Nick_Bryan' 'Lloyd_Meek']
+2025-04-27 01:16:38,581 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.0970
+2025-04-27 01:16:51,792 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:16:51,792 - INFO - Loaded configuration:
+2025-04-27 01:16:51,792 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.2, 'test_year': 2024}
+2025-04-27 01:16:51,792 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:16:51,792 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:16:51,792 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:16:51,792 - INFO - Loading data...
+2025-04-27 01:16:51,860 - INFO - Loaded 10434 player-season records
+2025-04-27 01:16:51,860 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:16:51,863 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:16:51,865 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:16:51,870 - INFO - Training set size: 4683
+2025-04-27 01:16:51,871 - INFO - Validation (test_year=2024) set size: 581
+2025-04-27 01:16:51,871 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:17:14,029 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:17:14,029 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:17:14,041 - INFO - Validation ROC-AUC: 0.6697
+2025-04-27 01:17:14,065 - INFO - Model Best 22 Team Value Score (points per $1k): 0.0960
+2025-04-27 01:17:14,065 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.0969
+2025-04-27 01:17:14,085 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.0910
+2025-04-27 01:17:14,087 - INFO - Player name: ['Finlay_Macrae' 'Tom_Brown' 'Luke_Nankervis' 'Brayden_Cook' 'Harry_Sharp'
+ 'Lachie_Fogarty' 'Corey_Durdin' 'Jhye_Clark' 'Elijah_Tsatas'
+ 'Lachlan_Bramble']
+2025-04-27 01:17:14,087 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.0966
+2025-04-27 01:18:00,700 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:18:00,700 - INFO - Loaded configuration:
+2025-04-27 01:18:00,700 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.3, 'test_year': 2024}
+2025-04-27 01:18:00,700 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:18:00,700 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 100, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:18:00,700 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:18:00,700 - INFO - Loading data...
+2025-04-27 01:18:00,768 - INFO - Loaded 10434 player-season records
+2025-04-27 01:18:00,768 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:18:00,771 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:18:00,773 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:18:00,778 - INFO - Training set size: 4683
+2025-04-27 01:18:00,778 - INFO - Validation (test_year=2024) set size: 581
+2025-04-27 01:18:00,778 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:18:22,490 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:18:22,491 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:18:22,501 - INFO - Validation ROC-AUC: 0.6423
+2025-04-27 01:18:22,525 - INFO - Model Best 22 Team Value Score (points per $1k): 0.0977
+2025-04-27 01:18:22,525 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.0972
+2025-04-27 01:18:22,545 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.0989
+2025-04-27 01:18:22,546 - INFO - Player name: ['Luke_Nankervis' 'Tom_Brown' 'Finlay_Macrae' 'Jeremy_Howe'
+ 'Lachie_Fogarty' 'Ned_Moyle' 'George_Wardlaw' 'Brodie_Grundy'
+ 'Brayden_Cook' 'Nick_Bryan']
+2025-04-27 01:18:22,547 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.0972
+2025-04-27 01:18:42,124 - INFO - Starting AFL Fantasy Breakout Model Training Pipeline
+2025-04-27 01:18:42,124 - INFO - Loaded configuration:
+2025-04-27 01:18:42,124 - INFO - data: {'output_dir': 'output/', 'normalize_columns': ['Average_Points', 'Next_Year_Price'], 'label_threshold': 0.3, 'test_year': 2024}
+2025-04-27 01:18:42,124 - INFO - model: {'input_dropout': 0.3, 'hidden_dims': [256, 128, 64, 32], 'output_dropout': 0.3}
+2025-04-27 01:18:42,124 - INFO - training: {'batch_size': 64, 'epochs': 2000, 'learning_rate': 0.001, 'patience': 25, 'save_path': 'output/training/mlp_breakout_model.pt'}
+2025-04-27 01:18:42,124 - INFO - logging: {'log_file': 'output/training/training_log.txt'}
+2025-04-27 01:18:42,125 - INFO - Loading data...
+2025-04-27 01:18:42,195 - INFO - Loaded 10434 player-season records
+2025-04-27 01:18:42,195 - INFO - Filtering to labeled data (label_available == 1)...
+2025-04-27 01:18:42,198 - INFO - Filtered to 5264 labeled player-season records
+2025-04-27 01:18:42,200 - INFO - Checking for remaining NaNs in selected features...
+2025-04-27 01:18:42,206 - INFO - Training set size: 4683
+2025-04-27 01:18:42,207 - INFO - Validation (test_year=2024) set size: 581
+2025-04-27 01:18:42,207 - INFO - Starting model training with input dimension 50...
+2025-04-27 01:18:48,802 - INFO - Model saved to output/training/mlp_breakout_model.pt
+2025-04-27 01:18:48,802 - INFO - Evaluating on holdout (validation) set...
+2025-04-27 01:18:48,814 - INFO - Validation ROC-AUC: 0.6740
+2025-04-27 01:18:48,837 - INFO - Model Best 22 Team Value Score (points per $1k): 0.0940
+2025-04-27 01:18:48,838 - INFO - Random Team Baseline Value (points per $1k) (avg of 100 draws): 0.0970
+2025-04-27 01:18:48,860 - INFO - Model Top 10 Picks Team Value Score (points per $1k): 0.0976
+2025-04-27 01:18:48,861 - INFO - Player name: ['Tom_Brown' 'Finlay_Macrae' 'Luke_Nankervis' 'Ned_Moyle' 'Toby_Conway'
+ 'Lachie_Fogarty' 'Harry_Sharp' 'Jeremy_Howe' 'Shane_McAdam'
+ 'Brayden_Cook']
+2025-04-27 01:18:48,861 - INFO - Random Top 10 Picks Team Baseline Value (points per $1k) (avg of 100 draws): 0.0972
