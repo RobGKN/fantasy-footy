@@ -128,7 +128,7 @@ def save_importance_plot(df_imp: pd.DataFrame, out_path: str, top_k: int = 15) -
     plt.tight_layout(); plt.savefig(out_path, dpi=150); plt.close()
 
 def fit_tiny_tree_on_train(X_train: np.ndarray, tlog_train: np.ndarray) -> DecisionTreeRegressor:
-    tree = DecisionTreeRegressor(max_depth=5, min_samples_leaf=20, random_state=42)
+    tree = DecisionTreeRegressor(max_depth=3, min_samples_leaf=50, random_state=42)
     tree.fit(X_train, tlog_train.reshape(-1))
     return tree
 

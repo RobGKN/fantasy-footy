@@ -8,9 +8,9 @@ Artifacts generated for interpretability of the AFL Breakout model.
 - Teacher vs surrogate examples: `teacher_topk.csv`, `student_topk.csv`
 
 ## Metrics (validation)
-- Spearman fidelity: 0.868
-- Top-K overlap: 0.182
-- Team value (surrogate): 0.0942
-- Team value (random): 0.0970
+- Spearman fidelity: 0.808
+- Top-K overlap: 0.136
+- Team value (surrogate): 0.0917
+- Team value (random): 0.0968
 
 Parameters: max_depth=3, min_samples_leaf=50
